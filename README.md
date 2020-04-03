@@ -1,5 +1,13 @@
-### Ngx-Admin Angular 8 application from akveo.com
-
-This is modified and more lightweight version of original application to practice UI Automation with Cypress.
-
-The original repo is here: https://github.com/akveo/ngx-admin
+# Cypress Web Automation Testing from Zero to Hero
+## Install
+* git
+* node js
+* vscode
+## Check
+* node -v
+* npm -v
+* npm install
+* npm start
+* http://localhost:4200/
+* npm install cypress --save-dev
+* npx cypress open
