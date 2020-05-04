@@ -74,13 +74,13 @@
         "tslib": "1.11.1",
         "typeface-exo": "0.0.22",
         "web-animations-js": "github:angular/web-animations-js#release_pr208",
-        "zone.js": "0.9.1"
+        "zone.js": "0.10.3"
     },
     "devDependencies": {
         "@angular-devkit/build-angular": "0.803.26",
         "@angular/cli": "8.3.26",
         "@angular/compiler-cli": "8.2.14",
-        "@angular/language-service": "8.0.0",
+        "@angular/language-service": "8.2.14",
         "@compodoc/compodoc": "1.1.11",
         "@fortawesome/fontawesome-free": "5.13.0",
         "@types/d3-color": "1.0.5",
