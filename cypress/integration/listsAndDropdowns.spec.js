@@ -2,15 +2,34 @@
 
 describe('Lists and dropdown', () => {
 
-    it('Assert property', () => {
+    it.only('Lists and dropdown', () => {
         cy.visit('/')
-        cy.contains('Forms').click()
-        cy.contains('Datepicker').click()
+        
+        //1
+        cy.get('nav nb-select').click()
+        cy.get('.options-list').contains('Dark').click()
+        cy.get('nav nb-select').should('contain', 'Dark')
+        cy.get('nb-layout-header nav').should('have.css', 'background-color', 'rgb(34, 43, 69)')
 
-        cy.contains('nb-card', 'Common Datepicker').find('input').then(input => {
-            cy.wrap(input).click()
-            cy.get('nb-calendar-day-picker').contains('17').click()
-            cy.wrap(input).invoke('prop', 'value').should('contain', 'May 17, 2020')
+        //2
+        cy.get('nav nb-select').then( dropdown => {
+            cy.wrap(dropdown).click()
+            cy.get('.options-list nb-option').each((listItem, index) => {
+                const colors = {
+                    "Light":"rgb(255, 255, 255)",
+                    "Dark":"rgb(34, 43, 69)",
+                    "Cosmic":"rgb(50, 50, 89)",
+                    "Corporate":"rgb(255, 255, 255)"
+                }
+                const itemText = listItem.text().trim()
+                cy.wrap(listItem).click()
+                cy.wrap(dropdown).should('contain', itemText)
+                cy.get('nb-layout-header nav').should('have.css', 'background-color', colors(itemText))
+
+                if(index < 3){
+                    cy.wrap(dropdown).click()
+                }
+            })
         })
     })
 })
