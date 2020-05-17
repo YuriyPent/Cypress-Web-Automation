@@ -21,6 +21,6 @@
     "viewportWidth": 1024
 }
 ```
-* add firstTest.spec.js
-* run npm start
-* run npx cypress open
+* add `firstTest.spec.js`
+* run `npm start`
+* run `npx cypress open`
