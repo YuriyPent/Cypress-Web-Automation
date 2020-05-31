@@ -8,7 +8,7 @@ describe('Test with backend', () => {
         cy.loginToApplication()
     })
 
-    it.skip('verify correct request and response', () => {
+    it('verify correct request and response', () => {
 
         cy.server()
         cy.route('POST', '**/articles').as('postArticles')
@@ -28,7 +28,7 @@ describe('Test with backend', () => {
         })
     })
 
-    it.skip('should gave tags with routing objects', () => {
+    it('should gave tags with routing objects', () => {
 
         cy.get('.tag-list')
             .should('contain', 'cypress')
@@ -55,14 +55,7 @@ describe('Test with backend', () => {
         cy.get('app-article-list button').eq(1).click().should('contain', '2')
     })
 
-    it.only('delete a new article in a global feed', () => {
-
-        const userCredentials = {
-            "user": {
-                "email": "testuser2305@gmail.com",
-                "password": "testUser2305"
-            }
-        }
+    it('delete a new article in a global feed', () => {
 
         const bodyRequest = {
             "article": {
@@ -73,31 +66,29 @@ describe('Test with backend', () => {
             }
         }
 
-        cy.request('POST', 'https://conduit.productionready.io/api//users/login', userCredentials)
-            .its('body').then(body => {
-                const token = body.user.token
+        cy.get('@token').then(token => {
 
-                cy.request({
-                    url: 'https://conduit.productionready.io/api/articles/',
-                    headers: { 'Authorization': 'Token ' + token },
-                    method: 'POST',
-                    body: bodyRequest
-                }).then(response => {
-                    expect(response.status).to.equal(200)
-                })
-
-                cy.contains('Global Feed').click()
-                cy.get('.article-preview').first().click()
-                cy.get('.article-actions').contains('Delete Article').click()
-
-                cy.request({
-                    url: 'https://conduit.productionready.io/api/articles?limit=10&offset=0',
-                    headers: { 'Authorization': 'Token ' + token },
-                    method: 'GET'
-                }).its('body').then(body => {
-                    console.log(body)
-                    expect(body.articles[0].title).not.to.equal(bodyRequest.title)
-                })
+            cy.request({
+                url: 'https://conduit.productionready.io/api/articles/',
+                headers: { 'Authorization': 'Token ' + token },
+                method: 'POST',
+                body: bodyRequest
+            }).then(response => {
+                expect(response.status).to.equal(200)
             })
+
+            cy.contains('Global Feed').click()
+            cy.get('.article-preview').first().click()
+            cy.get('.article-actions').contains('Delete Article').click()
+
+            cy.request({
+                url: 'https://conduit.productionready.io/api/articles?limit=10&offset=0',
+                headers: { 'Authorization': 'Token ' + token },
+                method: 'GET'
+            }).its('body').then(body => {
+                console.log(body)
+                expect(body.articles[0].title).not.to.equal(bodyRequest.title)
+            })
+        })
     })
 })
