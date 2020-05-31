@@ -5,6 +5,9 @@
     "viewportWidth": 1024,
     "video": false,
     "env": {
-        "RETRIES": 2
+        "RETRIES": 2,
+        "username":"testuser2305@gmail.com",
+        "password":"testUser2305",
+        "apiUrl":"https://conduit.productionready.io/"
     }
 }

@@ -6,7 +6,7 @@
 ## Check
 * check node version `node -v`
 * check npm version `npm -v`
-* update npm `npm install`
+* install npm `npm install`
 * start npm `npm start`
 * visit site `http://localhost:4200/`
 * install cypress `npm install cypress --save-dev`
@@ -56,3 +56,4 @@ module.exports = (on, config) => {
   }
 }
 ```
+* change env `npx cypress open --env configFile=qa`
