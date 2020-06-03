@@ -41,7 +41,7 @@
         "@angular/router": "9.1.9",
         "@asymmetrik/ngx-leaflet": "7.0.0",
         "@nebular/auth": "5.0.0",
-        "@nebular/eva-icons": "5.0.0",
+        "@nebular/eva-icons": "5.1.0",
         "@nebular/security": "5.0.0",
         "@nebular/theme": "5.0.0",
         "@swimlane/ngx-charts": "14.0.0",
