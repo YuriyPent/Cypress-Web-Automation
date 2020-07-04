@@ -124,4 +124,4 @@ RUN $(npm bin)/cypress run
 docker build -t cypress .
 ```
 * create file `docker-compose.yml`
-* `docker-compose up`
+* run `docker-compose up`
