@@ -11,6 +11,12 @@
 * visit site `http://localhost:4200/`
 * install cypress `npm install cypress --save-dev`
 * open cypress `npx cypress open`
+## Update dependencies
+```
+ npm install -g npm-check-updates
+ npm-check-updates -u
+ npm install
+ ```
 
 **Add configuration in cypress.json**
 ```json
@@ -57,3 +63,48 @@ module.exports = (on, config) => {
 }
 ```
 * change env `npx cypress open --env configFile=qa`
+
+**Reporters**
+* install `npm install --save-dev cypress-multi-reporters mocha-junit-reporter`
+* configuration file `cypress.json`
+```json
+{
+  "reporter": "cypress-multi-reporters",
+  "reporterOptions": {
+    "configFile": "reporter-config.json"
+  }
+}
+```
+* create file `reporter-config.json`
+* direct the junit reporter to save separate XML files. 
+```json
+{
+  "reporterEnabled": "spec, mocha-junit-reporter",
+  "mochaJunitReporterReporterOptions": {
+    "mochaFile": "cypress/results/results-[hash].xml"
+  }
+}
+```
+* for deleting all files from the cypress/results folder before running this command, since each run will output new XML files. Add the npm script commands below to your `package.json` then call npm run report.
+```json
+{
+  "scripts": {
+    "delete:reports": "rm cypress/results/* || true",
+    "prereport": "npm run delete:reports",
+    "report": "cypress run --reporter cypress-multi-reporters --reporter-options configFile=reporter-config.json"
+  }
+}
+```
+* install ***Mochawesome***
+`npm install --save-dev mochawesome mochawesome-merge mochawesome-report-generator junit-merge`
+* add to `reporter-config.json`
+```json
+"reporterOptions": {
+    "reportDir": "cypress/results",
+    "overwrite": false,
+    "html": false,
+    "json": true
+  }
+```
+* add to **package.json** for combine them using the ***mochawesome-merge utility*** and generate a combined HTML
+`"mochawesome:merge":"npx mochawesome-merge \"cypress/results/*.json\" > mochawesome.json && npx marge mochawesome.json"`
