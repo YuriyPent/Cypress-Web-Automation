@@ -8,7 +8,7 @@
 * check npm version `npm -v`
 * install npm `npm install`
 * start npm `npm start`
-* visit site `http://localhost:4200/`
+* visit `http://localhost:4200/`
 * install cypress `npm install cypress --save-dev`
 * open cypress `npx cypress open`
 ## Update dependencies
@@ -108,3 +108,20 @@ module.exports = (on, config) => {
 ```
 * add to **package.json** for combine them using the ***mochawesome-merge utility*** and generate a combined HTML
 `"mochawesome:merge":"npx mochawesome-merge \"cypress/results/*.json\" > mochawesome.json && npx marge mochawesome.json"`
+
+**Docker**
+* create `Dockerfile`
+* add the follow code to `Dockerfile`
+```docker
+FROM cypress/base:12.18.0
+RUN npm install --save-dev cypress
+RUN $(npm bin)/cypress verify
+RUN $(npm bin)/cypress run
+```
+* install docker and run it
+* docker build 
+```
+docker build -t cypress .
+```
+* create file `docker-compose.yml`
+* `docker-compose up`
