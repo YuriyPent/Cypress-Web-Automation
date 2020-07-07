@@ -47,7 +47,7 @@
     "@types/jasminewd2": "2.0.8",
     "@types/node": "14.0.14",
     "codelyzer": "6.0.0",
-    "cypress": "4.9.0",
+    "cypress": "4.10.0",
     "cypress-multi-reporters": "1.4.0",
     "cypress-plugin-retries": "1.5.2",
     "jasmine-core": "3.5.0",
