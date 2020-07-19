@@ -33,7 +33,7 @@
     "@angular/router": "10.0.2",
     "@babel/polyfill": "7.10.4",
     "core-js": "3.6.5",
-    "marked": "1.1.0",
+    "marked": "1.1.1",
     "rxjs": "6.6.0",
     "tslib": "2.0.0",
     "zone.js": "0.10.3"
