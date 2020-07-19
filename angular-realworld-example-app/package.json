@@ -33,10 +33,10 @@
     "@angular/router": "10.0.4",
     "@babel/polyfill": "7.10.4",
     "core-js": "3.6.5",
-    "kind-of": "^6.0.3",
+    "kind-of": "6.0.3",
     "marked": "1.1.1",
     "rxjs": "6.6.0",
-    "set-value": "^2.0.1",
+    "set-value": "2.0.1",
     "tslib": "2.0.0",
     "zone.js": "0.10.3"
   },
