@@ -27,8 +27,8 @@
         "docs:serve": "compodoc -p src/tsconfig.app.json -d docs -s",
         "prepush": "npm run lint:ci",
         "release:changelog": "npm run conventional-changelog -- -p angular -i CHANGELOG.md -s",
-        "cy:run_spec": "npx cypress run --spec 'cypress/integration/testWithPageObject.spec.js' --headless",
-        "cy:run_browser": "npm run cy:run_spec -- --browser chrome & npm run cy:run_spec -- --browser firefox"
+        "cy:run_spec": "npx cypress run --spec 'cypress/integration/testWithPageObject.spec.js' --headless --record --key 7bff7f48-a040-4ad3-a19c-aefdd63b3f74",
+        "cy:run_browser": "npm run cy:run_spec -- --browser chrome --group Chrome --ci-build-id 1 & npm run cy:run_spec -- --browser firefox --group Firefox --ci-build-id 1"
     },
     "dependencies": {
         "@agm/core": "1.1.0",
@@ -81,14 +81,14 @@
     "devDependencies": {
         "@angular-devkit/build-angular": "0.1000.3",
         "@angular/cli": "10.0.3",
-        "@angular/compiler-cli": "10.0.2",
-        "@angular/language-service": "10.0.2",
+        "@angular/compiler-cli": "10.0.4",
+        "@angular/language-service": "10.0.4",
         "@compodoc/compodoc": "1.1.11",
         "@fortawesome/fontawesome-free": "5.14.0",
         "@types/d3-color": "1.2.2",
-        "@types/node": "14.0.14",
+        "@types/node": "14.0.23",
         "@types/googlemaps": "3.39.9",
-        "@types/leaflet": "1.5.13",
+        "@types/leaflet": "1.5.16",
         "codelyzer": "6.0.0",
         "conventional-changelog-cli": "2.0.34",
         "cypress": "4.10.0",
