@@ -1,4 +1,4 @@
-FROM cypress/base:12.18.0
+FROM cypress/base:12.18.2
 RUN mkdir /app
 WORKDIR /app
 COPY . /app
