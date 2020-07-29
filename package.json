@@ -32,7 +32,7 @@
     },
     "dependencies": {
         "@agm/core": "1.1.0",
-        "@angular/cdk": "10.0.2",
+        "@angular/cdk": "10.1.1",
         "@asymmetrik/ngx-leaflet": "7.0.1",
         "@angular/animations": "10.0.6",
         "@angular/common": "10.0.6",
