@@ -43,7 +43,7 @@
         "@angular/platform-browser-dynamic": "10.0.6",
         "@angular/router": "10.0.6",
         "@nebular/auth": "5.1.0",
-        "@nebular/security": "5.1.0",
+        "@nebular/security": "6.0.0",
         "@nebular/eva-icons": "5.1.0",
         "@nebular/theme": "5.1.0",
         "@swimlane/ngx-charts": "14.0.0",
