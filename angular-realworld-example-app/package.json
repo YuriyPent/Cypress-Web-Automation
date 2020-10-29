@@ -32,7 +32,7 @@
     "@angular/platform-browser": "10.0.8",
     "@angular/platform-browser-dynamic": "10.0.8",
     "@angular/router": "10.0.8",
-    "@babel/polyfill": "7.10.4",
+    "@babel/polyfill": "7.12.1",
     "core-js": "3.6.5",
     "kind-of": "6.0.3",
     "marked": "1.1.1",
